@@ -1,6 +1,6 @@
-const { JsonWebTokenError } = require("jsonwebtoken");
 const mongoose = require('mongoose');
 const User = mongoose.model("User");
+const jwt = require("jsonwebtoken");
 
 const verifyToken = async(req, res, next) => {
     const bearerToken = req.headers.authorization;

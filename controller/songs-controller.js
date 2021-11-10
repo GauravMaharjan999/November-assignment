@@ -28,7 +28,10 @@ const saveSong = async(req, res) => {
 };
 
 const getSongsById = async(req, res) => {
-    const song = await Songs.findById(req.params.id)
+    const song = await Songs.findById(req.params.id);
+    // if (!song) {
+    //     res.json({ error: "song with given id was not found" })
+    // }
     res.json(song);
 };
 

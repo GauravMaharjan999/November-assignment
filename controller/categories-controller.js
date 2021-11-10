@@ -5,6 +5,7 @@ const categories = mongoose.model("Categories");
 //category of songs
 const getAllCategories = async(req, res) => {
     const category = await categories.find();
+
     res.json(category)
 };
 
@@ -18,9 +19,12 @@ const saveCategories = async(req, res) => {
     res.status(201).json(category);
 };
 
+
+
 const getCategoriesById = async(req, res) => {
     const category = await categories.findById(req.params.id)
-        /*.catch(res.status(404).json({ message: 'error' })  )*/
+        /* .catch(res.json({ error: "categories with given id was not found" })) */
+
 
 
     res.json(category);
